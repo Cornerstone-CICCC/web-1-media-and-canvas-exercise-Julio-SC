@@ -1,23 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
 </head>
-<body>
+
+<body
+  style="background-image: url(assets/images/background.jpg); background-repeat: no-repeat; background-color: green; background-position: 50% 0%;">
   <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+    <section class="audio-section">
+      <h2>Audio</h2>
+      <audio controls muted loop>
+        <source src="./assets/audio/piano.wav">
+        <p>Your browser does not support the audio tag.</p>
+      </audio>
+    </section>
 
-    <!-- VIDEO HTML GOES HERE -->
+    </section class="video-section">
+    <h2>Video</h2>
+    <video width="500" controls autoplay muted loop poster="./assets/images/poster.jpg">
+      <source src="./assets/video/ocean.mp4">
+      <p>Your browser does not support the video tag.</p>
+    </video>
+    </section>
 
-    <!-- IMAGE MAP HTML GOES HERE-->
+    <section class="image-section">
+      <h2>Map</h2>
+      <img src="./assets/images/fruit_table.jpg" width="500" usemap="#fruits_table">
+      <map id="fruits_table">
 
-    <!-- CANVAS HTML GOES HERE -->
+        <area shape="rect" coords="0,0,300,500" href="https://en.wikipedia.org/wiki/Lavandula" title="Lavender Flowers"
+          alt="Lavender Flowers">
+
+        <area shape="rect" coords="500,800,400,200" href="https://en.wikipedia.org/wiki/Orange_(fruit)" title="Oranges"
+          alt="Oranges">
+
+        <area shape="circle" coords="400,100,100" href="https://en.wikipedia.org/wiki/Coffee" title="Coffee"
+          alt="Coffee">
+      </map>
+
+    </section>
+
+    <section class="canvas-section">
+      <h2>Canvas</h2>
+      <canvas id="myCanvas" width="500" height="500"></canvas>
+    </section>
+  </div>
+
+
+  <script>
+    const canvas = document.querySelector('#myCanvas') // this will target the myCanvas element
+    const context = canvas.getContext('2d')
+
+    context.beginPath()
+    context.moveTo(400, 100)
+    context.lineTo(400, 400)
+    context.strokeStyle = "red"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(400, 400)
+    context.lineTo(100, 400)
+    context.strokeStyle = "blue"
+    context.lineWidth = 5
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(100, 400)
+    context.lineTo(100, 100)
+    context.strokeStyle = "orange"
+    context.lineWidth = 10
+    context.stroke()
+
+    context.beginPath()
+    context.moveTo(400, 100)
+    context.lineTo(100, 100)
+    context.strokeStyle = "black"
+    context.lineWidth = 5
+    context.stroke()
+
+  </script>
+
+  <!-- CANVAS HTML GOES HERE -->
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
   </script>
 </body>
+
 </html>
